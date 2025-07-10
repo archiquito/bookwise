@@ -13,6 +13,13 @@ $description = $_POST['description'];
 $img = $_POST['img_url'] === '' ? "https://picsum.photos/id/".rand(1,500)."/200/200" : $_POST['img_url'];
 $user_id = flash()->getSession('auth')['id'];
 
+// $dir = "images/";
+// $file = $basename($_FILES['img']['name']);
+// $newName = md5(ran());
+// $extension = pathinfo($file,  PATHINFO_EXTENSION);
+// $newFile = "$dir.$newName.$extension";
+// move_upload_files($_FILES['img']['temp_name'], $newFile);
+
 $validate = Validation::validate([
         'title' => ['required', 'min:3'],
         'author' => ['required', 'min:3'],
